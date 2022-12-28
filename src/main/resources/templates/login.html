@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Log in</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Log in to the Stud farm application</h1>
+
+		<!-- Break line -->
+		<br> <br>
+
+		<form action="#" th:action="@{/home}"  method="post">
+
+			<label for="username">Username:</label> 
+			<input type="text"	id="username" name="username"> 
+			<br><br>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password"> 
+			<br><br>
+			<input type="submit" value="Log in">
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>

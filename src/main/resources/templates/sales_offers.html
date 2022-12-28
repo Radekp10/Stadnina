@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Sales Offers</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Sales Offers Records</h1>
+
+		<!-- Entry to a new page -->
+		<a href="/new"><button>Enter a new sales offer</button></a>
+
+		<!-- Break line -->
+		<br> <br>
+
+		<!-- Table -->
+		<table border="1" cellpadding="10">
+
+			<!-- Table header -->
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Status</th>
+					<th>Price</th>
+					<th>HorseId</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+
+			<!-- Table body -->
+			<tbody>
+				<tr th:each="salesOffer:${listSalesOffer}">
+					<td th:text="${salesOffer.id}">ID</td>
+					<td th:text="${salesOffer.status}">Status</td>
+					<td th:text="${salesOffer.price}">Price</td>
+					<td th:text="${salesOffer.horseId}">Horse ID</td>
+
+					<td><a th:href="@{'/edit/' + ${salesOffer.id}}"><Button>Edit</Button></a>
+						&nbsp;&nbsp;&nbsp;&nbsp; 
+						<a th:href="@{'/delete/' + ${salesOffer.id}}"><Button>Delete</Button></a>
+					</td>
+
+				</tr>
+			</tbody>
+
+		</table>
+		
+		<br><br>
+		<!-- Entry to homepage -->
+		<a href="/home"><button>Go back</button></a>
+
+	</div>
+
+</body>
+
+</html>

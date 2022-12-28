@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit form</title>
+</head>
+<body>
+
+	<div align="center">
+
+		<!-- Page header -->
+		<h1>Edit sales offer</h1>
+
+		<!-- End line/new line -->
+		<br />
+
+		<form action="#" th:action="@{/update}" th:object="${salesOffer}"
+			method="post">
+
+			<!--  Table -->
+			<table border="1" cellpadding="10">
+
+				<!-- Table row -->
+				<tr>
+					<td>ID*:</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly"></td>
+				</tr>
+
+				<!-- Table second row -->
+				<tr>
+					<td>Status*:</td>
+					<td><input type="text" th:field="*{status}"></td>
+				</tr>
+
+				<!-- Table third row -->
+				<tr>
+					<td>Price*:</td>
+					<td><input type="text" th:field="*{price}"></td>
+				</tr>
+
+				<!-- Table fourth row -->
+				<tr>
+					<td>HorseId*:</td>
+					<td><input type="text" th:field="*{horseId}"></td>
+				</tr>
+				
+				<!-- Table last but one row -->
+				<tr>
+					<td colspan="2">[*] obligatory field</td>
+				</tr>	
+
+				<!-- Button save -->
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+
+
+			</table>
+
+		</form>
+
+	</div>
+
+</body>
+</html>

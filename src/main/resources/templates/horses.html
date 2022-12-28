@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Horses</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Horses Records</h1>
+
+		<!-- Entry to a new page -->
+		<a href="/new_horse"><button>Enter a new horse</button></a>
+
+		<!-- Break line -->
+		<br> <br>
+
+		<!-- Table -->
+		<table border="1" cellpadding="10">
+
+			<!-- Table header -->
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Sex</th>
+					<th>Date of birth</th>
+					<th>Male lineage</th>
+					<th>Female lineage</th>
+					<th>Intended use</th>
+					<th>Country of origin</th>
+					<th>Dimension 1</th>
+					<th>Dimension 2</th>
+					<th>Dimension 3</th>
+					<th>Additional info</th>
+					<th>Stud farm ID</th>
+					<th>Equine coat color ID</th>
+					<th>Breed ID</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+
+			<!-- Table body -->
+			<tbody>
+				<tr th:each="horse:${listHorse}">
+					<td th:text="${horse.id}">ID</td>
+					<td th:text="${horse.name}">Name</td>
+					<td th:text="${horse.sex}">Sex</td>
+					<td th:text="${horse.dateOfBirth}">Date of birth</td>
+					<td th:text="${horse.maleLineage}">Male lineage</td>
+					<td th:text="${horse.femaleLineage}">Female lineage</td>
+					<td th:text="${horse.intendedUse}">Intended use</td>
+					<td th:text="${horse.countryOfOrigin}">Country of origin</td>
+					<td th:text="${horse.dimensionOne}">Dimension 1</td>
+					<td th:text="${horse.dimensionTwo}">Dimension 2</td>
+					<td th:text="${horse.dimensionThree}">Dimension 3</td>
+					<td th:text="${horse.additionalInfo}">Additional info</td>
+					<td th:text="${horse.studFarmId}">Stud farm ID</td>
+					<td th:text="${horse.equineCoatColorId}">Equine coat color ID</td>
+					<td th:text="${horse.breedId}">Breed ID</td>
+
+					<td><a th:href="@{'/edit_horse/' + ${horse.id}}"><Button>Edit</Button></a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a
+						th:href="@{'/delete_horse/' + ${horse.id}}"><Button>Delete</Button></a>
+					</td>
+
+				</tr>
+			</tbody>
+
+		</table>
+
+		<br> <br>
+		<!-- Entry to homepage -->
+		<a href="/home"><button>Go back</button></a>
+
+	</div>
+
+</body>
+
+</html>

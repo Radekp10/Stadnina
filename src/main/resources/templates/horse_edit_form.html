@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Horse edit form</title>
+</head>
+<body>
+
+	<div align="center">
+
+		<!-- Page header -->
+		<h1>Edit horse</h1>
+
+		<!-- End line/new line -->
+		<br />
+
+		<form action="#" th:action="@{/update_horse}" th:object="${horse}"
+			method="post">
+
+			<!--  Table -->
+			<table border="1" cellpadding="10">
+
+				<!-- Table first row -->
+				<tr>
+					<td>ID*:</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly"></td>
+				</tr>
+
+				<!-- Table second row -->
+				<tr>
+					<td>Name*:</td>
+					<td><input type="text" th:field="*{name}"></td>
+				</tr>
+
+				<!-- Table third row -->
+				<tr>
+					<td>Sex*:</td>
+					<td><input type="text" th:field="*{sex}"></td>
+				</tr>
+
+				<!-- Table fourth row -->
+				<tr>
+					<td>Date of birth*:</td>
+					<td><input type="text" th:field="*{dateOfBirth}"></td>
+				</tr>
+
+				<!-- Table 5. row -->
+				<tr>
+					<td>Male lineage*:</td>
+					<td><input type="text" th:field="*{maleLineage}"></td>
+				</tr>
+
+				<!-- Table 6. row -->
+				<tr>
+					<td>Female lineage*:</td>
+					<td><input type="text" th:field="*{femaleLineage}"></td>
+				</tr>
+
+				<!-- Table 7. row -->
+				<tr>
+					<td>Intended use*:</td>
+					<td><input type="text" th:field="*{intendedUse}"></td>
+				</tr>
+
+				<!-- Table 8. row -->
+				<tr>
+					<td>Country of origin*:</td>
+					<td><input type="text" th:field="*{countryOfOrigin}"></td>
+				</tr>
+
+				<!-- Table 9. row -->
+				<tr>
+					<td>Dimension 1:</td>
+					<td><input type="text" th:field="*{dimensionOne}"></td>
+				</tr>
+
+				<!-- Table 10. row -->
+				<tr>
+					<td>Dimension 2:</td>
+					<td><input type="text" th:field="*{dimensionTwo}"></td>
+				</tr>
+
+				<!-- Table 11. row -->
+				<tr>
+					<td>Dimension 3:</td>
+					<td><input type="text" th:field="*{dimensionThree}"></td>
+				</tr>
+
+				<!-- Table 12. row -->
+				<tr>
+					<td>Additional info:</td>
+					<td><input type="text" th:field="*{additionalInfo}"></td>
+				</tr>
+
+				<!-- Table 13. row -->
+				<tr>
+					<td>Stud farm ID*:</td>
+					<td><input type="text" th:field="*{studFarmId}"></td>
+				</tr>
+
+				<!-- Table 14. row -->
+				<tr>
+					<td>Equine coat color ID*:</td>
+					<td><input type="text" th:field="*{equineCoatColorId}"></td>
+				</tr>
+
+				<!-- Table 15. row -->
+				<tr>
+					<td>Breed ID*:</td>
+					<td><input type="text" th:field="*{breedId}"></td>
+				</tr>
+
+				<!-- Table last but one row -->
+				<tr>
+					<td colspan="2">[*] obligatory field</td>
+				</tr>	
+
+				<!-- Button save -->
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+
+
+			</table>
+
+		</form>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Stud Farm Application</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>My data</h1>
+
+		<!-- Table -->
+		<table border="1" cellpadding="10">
+
+			<tr>
+				<td>ID</td>
+				<td th:text="${employee.id}">ID</td>
+			</tr>
+			<tr>
+				<td>First name</td>
+				<td th:text="${employee.firstName}">First name</td>
+			</tr>
+			<tr>
+				<td>Last name</td>
+				<td th:text="${employee.lastName}">Last name</td>
+			</tr>
+			<tr>
+				<td>Date of birth</td>
+				<td th:text="${employee.dateOfBirth}">Date of birth</td>
+			</tr>
+			<tr>
+				<td>PESEL</td>
+				<td th:text="${employee.pesel}">PESEL</td>
+			</tr>
+			<tr>
+				<td>Sex</td>
+				<td th:text="${employee.sex}">Sex</td>
+			</tr>
+			<tr>
+				<td>Phone number</td>
+				<td th:text="${employee.phoneNumber}">Phone Number</td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td th:text="${employee.email}">Email</td>
+			</tr>
+			<tr>
+				<td>Hire date</td>
+				<td th:text="${employee.hireDate}">Hire date</td>
+			</tr>
+			<tr>
+				<td>Account number</td>
+				<td th:text="${employee.accountNumber}">Account number</td>
+			</tr>
+			<tr>
+				<td>Stud farm ID</td>
+				<td th:text="${employee.studFarmId}">Stud Farm ID</td>
+			</tr>
+			<tr>
+				<td>Address ID</td>
+				<td th:text="${employee.addressId}">Address ID</td>
+			</tr>
+			<tr>
+				<td>PositionID</td>
+				<td th:text="${employee.positionId}">Position ID</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<a th:href="@{'/userhome/' + ${employee.id} + '/employee_edit_form_userview/' +
+						${employee.id}}"><Button>Edit</Button></a>
+				</td>
+			</tr>
+
+		</table>
+
+		<br>
+		<br>
+		
+		<!-- View horses' data -->
+		<a th:href="@{'/userhome/' + ${employee.id} + '/horses_userview/'}"><Button>View horses' data</Button></a>
+		
+		<br><br>
+
+		<!-- Go back to logging page -->
+		<a href="/"><button>Log out</button></a>
+
+
+	</div>
+</body>
+</html>

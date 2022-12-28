@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Employees</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Employees Records</h1>
+
+		<!-- Entry to a new page -->
+		<a href="/new_employee"><button>Enter a new employee</button></a>
+
+		<!-- Break line -->
+		<br> <br>
+
+		<!-- Table -->
+		<table border="1" cellpadding="10">
+
+			<!-- Table header -->
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>First name</th>
+					<th>Last name</th>
+					<th>Date of birth</th>
+					<th>PESEL</th>
+					<th>Sex</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+					<th>Hire date</th>
+					<th>Account number</th>
+					<th>Stud Farm ID</th>
+					<th>Address ID</th>
+					<th>Position ID</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+
+			<!-- Table body -->
+			<tbody>
+				<tr th:each="employee:${listEmployee}">
+					<td th:text="${employee.id}">ID</td>
+					<td th:text="${employee.firstName}">First name</td>
+					<td th:text="${employee.lastName}">Last name</td>
+					<td th:text="${employee.dateOfBirth}">Date of birth</td>
+					<td th:text="${employee.pesel}">PESEL</td>
+					<td th:text="${employee.sex}">Sex</td>
+					<td th:text="${employee.phoneNumber}">Phone Number</td>
+					<td th:text="${employee.email}">Email</td>
+					<td th:text="${employee.hireDate}">Hire date</td>
+					<td th:text="${employee.accountNumber}">Account number</td>
+					<td th:text="${employee.studFarmId}">Stud Farm ID</td>
+					<td th:text="${employee.addressId}">Address ID</td>
+					<td th:text="${employee.positionId}">Position ID</td>
+
+					<td><a th:href="@{'/edit_employee/' + ${employee.id}}"><Button>Edit</Button></a>
+						&nbsp;&nbsp;&nbsp;&nbsp; 
+						<a th:href="@{'/delete_employee/' + ${employee.id}}"><Button>Delete</Button></a>
+					</td>
+
+				</tr>
+			</tbody>
+
+		</table>
+		
+		<br><br>
+		<!-- Entry to homepage -->
+		<a href="/home"><button>Go back</button></a>
+
+	</div>
+
+</body>
+
+</html>

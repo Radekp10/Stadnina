@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee edit form</title>
+</head>
+<body>
+
+	<div align="center">
+
+		<!-- Page header -->
+		<h1>Edit employee</h1>
+
+		<!-- End line/new line -->
+		<br />
+
+		<form action="#" th:action="@{/update_employee}" th:object="${employee}"
+			method="post">
+
+			<!--  Table -->
+			<table border="1" cellpadding="10">
+
+				<!-- Table row -->
+				<tr>
+					<td>ID*:</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly"></td>
+				</tr>
+
+				<!-- Table second row -->
+				<tr>
+					<td>First name*:</td>
+					<td><input type="text" th:field="*{firstName}"></td>
+				</tr>
+
+				<!-- Table third row -->
+				<tr>
+					<td>Last name*:</td>
+					<td><input type="text" th:field="*{lastName}"></td>
+				</tr>
+
+				<!-- Table fourth row -->
+				<tr>
+					<td>Date of birth*:</td>
+					<td><input type="text" th:field="*{dateOfBirth}"></td>
+				</tr>
+				
+				<!-- Table 5. row -->
+				<tr>
+					<td>PESEL:</td>
+					<td><input type="text" th:field="*{pesel}"></td>
+				</tr>
+				
+				<!-- Table 6. row -->
+				<tr>
+					<td>Sex*:</td>
+					<td><input type="text" th:field="*{sex}"></td>
+				</tr>
+				
+				<!-- Table 7. row -->
+				<tr>
+					<td>Phone number:</td>
+					<td><input type="text" th:field="*{phoneNumber}"></td>
+				</tr>
+				
+				<!-- Table 8. row -->
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" th:field="*{email}"></td>
+				</tr>
+				
+				<!-- Table 9. row -->
+				<tr>
+					<td>Hire date*:</td>
+					<td><input type="text" th:field="*{hireDate}"></td>
+				</tr>
+				
+				<!-- Table 10. row -->
+				<tr>
+					<td>Account number:</td>
+					<td><input type="text" th:field="*{accountNumber}"></td>
+				</tr>
+				
+				<!-- Table 11. row -->
+				<tr>
+					<td>Stud Farm ID*:</td>
+					<td><input type="text" th:field="*{studFarmId}"></td>
+				</tr>
+				
+				<!-- Table 12. row -->
+				<tr>
+					<td>Address ID*:</td>
+					<td><input type="text" th:field="*{addressId}"></td>
+				</tr>
+				
+				<!-- Table 13. row -->
+				<tr>
+					<td>Position ID*:</td>
+					<td><input type="text" th:field="*{positionId}"></td>
+				</tr>
+				
+				<!-- Table last but one row -->
+				<tr>
+					<td colspan="2">[*] obligatory field</td>
+				</tr>	
+
+				<!-- Button save -->
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+
+
+			</table>
+
+		</form>
+
+	</div>
+
+</body>
+</html>
